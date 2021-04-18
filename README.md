@@ -52,5 +52,21 @@ modify date: 2021/04/08
             el:"#app",
             router})
    1.9  用 router-view 标签站位路由匹配区域;
-
+2 路由高亮
    2.1  在router.js路由模块配置属性linkActiveClass:'mui-active', //使用mui-active 替换默认的类 router-link-active
+# 首页轮播图的制作：使用mint-ui 的swipe组件
+    1 代码
+    https://mint-ui.github.io/docs/#/zh-cn2/swipe
+       + 引入swipe组件
+       + 把代码粘贴到页面要展示的区域
+     设置录播图背景色 这里使用了scss的 交集选择器:
+         &:nth-child(1){
+         background-color: red;
+         }
+
+    2 从API接口获取轮播图图片数据并渲染到页面中
+        + 安装 vue-resource
+        //2.1导入vue-resource
+          import VueResource from 'vue-resource';
+        //2.2安装vue-resource
+          Vue.use(VueResource)
