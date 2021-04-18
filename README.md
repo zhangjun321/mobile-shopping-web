@@ -87,3 +87,23 @@ modify date: 2021/04/08
                       },
         +渲染轮播图页面
         +设置img的高度,宽度，和样式
+
+#六宫格样式改造
+    + 从MUI获取九宫格的代码片段grid-default-html 改造成自己的样式并加入图标
+# 完成tabbar中不同路由之间的切换效果
+    + 将App.js中的router-view 用 transition标签包裹
+    + 配置动画的效果
+      .v-enter{
+      opacity: 0;
+      transform: translateX(100%);
+      }
+      .v-leave-to{
+      opacity: 0;
+      transform: translateX(-100%);
+      position: absolute;
+      }
+      .v-enter-active,
+      .v-leave-active{
+      transition: all 0.5s ease;
+      }
+
