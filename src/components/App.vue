@@ -36,7 +36,7 @@ name: "App.vue"
 
 <style lang="scss" scoped>
 .container-fluid{
-  text-align: center;
+
   padding-top: 40px;
 
   .title{
