@@ -109,5 +109,43 @@ modify date: 2021/04/08
 
 # promise的使用
   需求：封装一个方法，将给定文件路径的文件内容读取并返回
-  promise用于解决回调地狱的问题，将回调嵌套的层级结构转变成链式结构
+  + promise用于解决回调地狱的问题，将回调嵌套的层级结构转变成链式结构
+  + Promise是一个构造函数，在它身上有reject和resolve两个回调函数表示成功和失败的回调
+  + Promise构造函数中的prototype有.then()方法，只要是Promise的实例都可以调用这个.then方法
+  + Promise表示一个异步操作，每当我们new一个实例就表示一个具体的异步操作
+  + Promise表示一个异步操作，只能有两种状态，1 成功，2 失败
+  + 如果内部拿到Promise的操作结果无法使用return将结果返回 ，只能使用回调函数将成功或者失败的结果返回给调用者
+  + 我们可以在new出来的Promise实例上调用.then()方法，预先指定成功或失败的回调函数,如果不想让Promise实例中的异步操作代码
+    块立即执行应该使用方法将promise实例封装，交给调用者执行
 
+          //如果后续Promise执行依赖于前面Promise执行的结果。一旦有报错则立即终止所有的promise执行
+          // catch()的作用是捕获异常并立即终止程序继续执行
+
+          getFileByPath(path.join(__dirname, '/11.txt')).then(function (data){
+          console.log(data)
+          return getFileByPath(path.join(__dirname, '/2.txt'))
+          }).then(function (data){
+          console.log(data)
+          return getFileByPath(path.join(__dirname, '/3.txt'))
+          }).then(function (data){
+          console.log(data)
+          }).catch(function (err){
+          console.log(err.message)
+          })
+
+          console.log("ok")
+
+
+# Promise也可以在jquery发送ajax请求的时候使用
+           $(function (){
+                      $('#btn').on('click',function (){
+                      $.ajax({
+                      url:'./data.json',
+                      type:'get',
+                      dataType:'json',
+
+                      }).then(function (data){
+                      console.log(data)
+                      })
+                      })
+                      })
