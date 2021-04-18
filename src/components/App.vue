@@ -3,9 +3,9 @@
  <!--header区域-->
   <mt-header class="text-secondary title " fixed  title="乐淘淘购物网站"></mt-header>
 <!--content区域  -->
-<router-view>
-
-</router-view>
+<transition>
+  <router-view></router-view>
+</transition>
 <!-- tabbar区域-->
     <nav class="mui-bar mui-bar-tab">
       <router-link to="/homePage" class="mui-tab-item mui-active" >
@@ -36,7 +36,8 @@ name: "App.vue"
 
 <style lang="scss" scoped>
 .container-fluid{
-
+  text-align: center;
+  overflow-x: hidden;
   padding-top: 40px;
 
   .title{
@@ -47,5 +48,19 @@ name: "App.vue"
 
 
   }
+}
+
+.v-enter{
+  opacity: 0;
+  transform: translateX(100%);
+}
+.v-leave-to{
+  opacity: 0;
+  transform: translateX(-100%);
+  position: absolute;
+}
+.v-enter-active,
+.v-leave-active{
+  transition: all 0.5s ease;
 }
 </style>
