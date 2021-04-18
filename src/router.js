@@ -18,7 +18,7 @@ const router = new VueRouter({
     {path:'/search',component:SearchContainer},
 
   ],
-  linkActiveClass:'mui-active',
+  linkActiveClass:'mui-active', //使用mui-active 替换默认的类 router-link-active
 });
 
 

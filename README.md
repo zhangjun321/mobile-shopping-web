@@ -51,4 +51,6 @@ modify date: 2021/04/08
         new Vue({
             el:"#app",
             router})
-   1.9  用 router-view 标签站位路由匹配区域
+   1.9  用 router-view 标签站位路由匹配区域;
+
+   2.1  在router.js路由模块配置属性linkActiveClass:'mui-active', //使用mui-active 替换默认的类 router-link-active
