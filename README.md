@@ -1,6 +1,6 @@
 # webpack-vue-routes
 
-> A Vue.js project
+> develop a front page of shopping-website, this mobile app used the Vue framework, Mint-Ui,MUI
 
 ## Build Setup
 
