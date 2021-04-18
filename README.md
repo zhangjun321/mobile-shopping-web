@@ -70,3 +70,20 @@ modify date: 2021/04/08
           import VueResource from 'vue-resource';
         //2.2安装vue-resource
           Vue.use(VueResource)
+        + 使用vue-resource的$http获取接口数据
+            getSwipe(){
+                        //获取轮播图图片数据
+                        this.$http.get('http://127.0.0.1:8899/api/getlunbo').then(result => {
+                          if(result.body.status===0){
+                            this.swipeList=result.body.message;
+
+                          }else{
+                            Toast({
+                              message:'获取图片数据失败！',
+                              iconClass:'icon icon-success'
+                            })
+                          }
+                        })
+                      },
+        +渲染轮播图页面
+        +设置img的高度,宽度，和样式
