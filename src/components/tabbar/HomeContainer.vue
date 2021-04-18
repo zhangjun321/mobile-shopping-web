@@ -1,11 +1,13 @@
 <template>
-$END$
+  <div>
+    HomeContainer.vue
+  </div>
 </template>
 
 <script>
 export default {
-name: "HomeContainer.vue"
-}
+  name: 'HomeContainer'
+};
 </script>
 
 <style scoped>

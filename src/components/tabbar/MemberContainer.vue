@@ -1,11 +1,13 @@
 <template>
-$END$
+<div>
+  MemberContainer.vue
+</div>
 </template>
 
 <script>
 export default {
-name: "MemberContainer.vue"
-}
+  name: 'MemberContainer'
+};
 </script>
 
 <style scoped>

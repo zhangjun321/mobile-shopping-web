@@ -1,11 +1,13 @@
 <template>
-$END$
+<div>
+  CartContainer.vue
+</div>
 </template>
 
 <script>
 export default {
-name: "ShopContainer.vue"
-}
+  name: 'CartContainer'
+};
 </script>
 
 <style scoped>
