@@ -107,3 +107,6 @@ modify date: 2021/04/08
       transition: all 0.5s ease;
       }
 
+# promise的使用
+  需求：封装一个方法，将给定文件路径的文件内容读取并返回
+
