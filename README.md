@@ -138,7 +138,7 @@ modify date: 2021/04/08
         })
 
 #Jquery的ajax异步请求也可以使用promise
-        $(function (){
+       +  $(function (){
           $('#btn').on('click',function (){
             $.ajax({
               url:'./data.json',
