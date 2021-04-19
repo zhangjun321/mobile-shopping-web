@@ -111,3 +111,42 @@ modify date: 2021/04/08
   需求：封装一个方法，将给定文件路径的文件内容读取并返回
   promise用于解决回调地狱的问题，将回调嵌套的层级结构转变成链式结构
 
+
+      +如果后续Promise执行依赖于前面Promise执行的结果。一旦有报错则立即终止所有的promise执行
+      + catch()的作用是捕获异常并立即终止程序继续执行
+      //如果后续Promise执行依赖于前面Promise执行的结果。一旦有报错则立即终止所有的promise执行
+      // catch()的作用是捕获异常并立即终止程序继续执行
+
+        getFileByPath(path.join(__dirname, '/11.txt')).then(function (data){
+        console.log(data)
+        return getFileByPath(path.join(__dirname, '/2.txt'))
+        }).then(function (data){
+        console.log(data)
+        return getFileByPath(path.join(__dirname, '/3.txt'))
+        }).then(function (data){
+        console.log(data)
+        }).catch(function (err){
+        console.log(err.message)
+        })
+
+        console.log("ok")
+
+        getFileByPath(path.join(__dirname, '/1.txt')).then(function (data){
+        console.log(data)
+        },function (err){
+        console.log(err.message)
+        })
+
+#Jquery的ajax异步请求也可以使用promise
+        $(function (){
+          $('#btn').on('click',function (){
+            $.ajax({
+              url:'./data.json',
+              type:'get',
+              dataType:'json',
+
+            }).then(function (data){
+              console.log(data)
+            })
+          })
+      })
