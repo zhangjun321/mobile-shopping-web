@@ -15,6 +15,9 @@ const path = require('path');
 
 
 
+
+
+
 // 自定义方法
 // 封装没有实现给定路径返回文件内容，
 // function getFileByPath(_path, errcb, successcb) {
@@ -72,6 +75,7 @@ function getFileByPath(_path) {
    })
 }
 
+
 //  getFileByPath(path.join(__dirname, '/1.txt')).then(function (data){
 //   console.log(data)
 // },function (err){
@@ -128,3 +132,10 @@ getFileByPath(path.join(__dirname, '/11.txt')).then(function (data){
 })
 
 console.log("ok")
+
+ getFileByPath(path.join(__dirname, '/1.txt')).then(function (data){
+  console.log(data)
+},function (err){
+  console.log(err.message)
+})
+
