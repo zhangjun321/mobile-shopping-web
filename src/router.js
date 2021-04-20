@@ -4,6 +4,8 @@ import MemberContainer from './components/tabbar/MemberContainer.vue'
 import ShopContainer from './components/tabbar/CartContainer.vue'
 import SearchContainer from './components/tabbar/SearchContainer.vue'
 import VueRouter from 'vue-router'
+import NewsList from './components/news/NewsList.vue';
+import NewsInfo from './components/news/NewsInfo.vue';
 Vue.use(VueRouter)
 
 
@@ -16,7 +18,8 @@ const router = new VueRouter({
     {path:'/shopCart',component:ShopContainer},
     {path:'/homePage',component:HomeContainer},
     {path:'/search',component:SearchContainer},
-
+    {path:'/homePage/newsList',component:NewsList},
+    {path:'/homePage/newsInfo/:id',component:NewsInfo}
   ],
   linkActiveClass:'mui-active', //使用mui-active 替换默认的类 router-link-active
 });
