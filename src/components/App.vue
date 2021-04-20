@@ -36,9 +36,10 @@ name: "App.vue"
 
 <style lang="scss" scoped>
 .container-fluid{
-  text-align: center;
+
   overflow-x: hidden;
   padding-top: 40px;
+  padding-bottom: 50px;
 
   .title{
     font-size: 40px;

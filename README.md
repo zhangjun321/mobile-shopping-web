@@ -148,3 +148,15 @@ modify date: 2021/04/08
             })
           })
       })
+
+# 点击新闻资讯按钮进入新闻列表
+    + 改造路由：创建NewsList.vue组件，在router.js中配置路由和组件的对应关系 √
+    + 绘制新闻列表页面布局√
+      使用media-list.html的代码片段
+    + 获取接口数据并渲染页面√
+# 全局时间格式过滤器
+    + 需要导入moment包，moment(data).format(pattern)
+      //定义全局的过滤器
+        Vue.filter('dataFormat',function (data,pattern="YYYY/MM/DD :HH:mm:ss"){
+        return  moment(data).format(pattern)
+        })
