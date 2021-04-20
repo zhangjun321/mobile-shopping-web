@@ -148,3 +148,27 @@ modify date: 2021/04/08
             })
           })
       })
+
+# 点击新闻资讯按钮进入新闻列表
+    + 改造路由：创建NewsList.vue组件，在router.js中配置路由和组件的对应关系 √
+    + 绘制新闻列表页面布局√
+      使用media-list.html的代码片段
+    + 获取接口数据并渲染页面√
+# 全局时间格式过滤器
+    + 需要导入moment包，moment(data).format(pattern)√
+      //定义全局的过滤器
+        Vue.filter('dataFormat',function (data,pattern="YYYY/MM/DD :HH:mm:ss"){
+        return  moment(data).format(pattern)
+        })
+
+# 完成点击新闻资讯=>新闻列表链接=>进入新闻详情页面功能
+    + 路由改造√
+    + 绘制新闻详情页面√
+    + 获取API接口数据并渲染页面√
+
+# 完成发表评论区域(将其单独抽离为Comment.vue组件，在需要的时候引入到页面)
+    + 制作评论组件页面样式√
+    + 加载API接口数据并将评论内容加载到NewsInfo组件√
+      1 实现加载更多按钮功能√
+      2 实现发表评论按钮功能
+
