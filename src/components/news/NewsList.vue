@@ -7,7 +7,11 @@
 
         <img class="mui-media-object mui-pull-left" :src="item.img_url" alt="">
         <div class="mui-media-body">
+<<<<<<< HEAD
           <router-link  :to="'/homePage/newsInfo/'+item.id"><h2 class="text-secondary">{{item.title}} </h2></router-link>
+=======
+          <a href=""><h2 class="text-secondary">{{item.title}} </h2></a>
+>>>>>>> github/main
 
           <h3>{{item.zhaiyao}}</h3>
           <p class='mui-ellipsis text-primary'>
