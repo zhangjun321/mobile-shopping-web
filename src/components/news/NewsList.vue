@@ -10,7 +10,7 @@
 
           <router-link  :to="'/homePage/newsInfo/'+item.id"><h2 class="text-secondary">{{item.title}} </h2></router-link>
 
-          <a href=""><h2 class="text-secondary">{{item.title}} </h2></a>
+
 
 
           <h3>{{item.zhaiyao}}</h3>

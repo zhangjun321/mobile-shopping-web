@@ -1,20 +1,24 @@
 import Vue from 'vue';
 import app from './components/App.vue';
 //导入Mint-ui 并按需要注册组件
-import {Header,Toast,Button,Tabbar,TabItem,Swipe, SwipeItem}  from 'mint-ui'
-//Header组件注册
-Vue.component(Header.name,Header)
-//Toast组件祖册
-Vue.component(Toast.name,Toast)
-//Button组件祖册
-Vue.component(Button.name,Button)
-//Tabbar组件注册
-Vue.component(Tabbar.name, Tabbar);
-//TabItem组件祖册
-Vue.component(TabItem.name, TabItem);
-//轮播图组件注册
-Vue.component(Swipe.name, Swipe);
-Vue.component(SwipeItem.name, SwipeItem);
+// import {Header,Toast,Button,Tabbar,TabItem,Swipe, SwipeItem,}  from 'mint-ui'
+// //Header组件注册
+// Vue.component(Header.name,Header)
+// //Toast组件祖册
+// Vue.component(Toast.name,Toast)
+// //Button组件祖册
+// Vue.component(Button.name,Button)
+// //Tabbar组件注册
+// Vue.component(Tabbar.name, Tabbar);
+// //TabItem组件祖册
+// Vue.component(TabItem.name, TabItem);
+// //轮播图组件注册
+// Vue.component(Swipe.name, Swipe);
+// Vue.component(SwipeItem.name, SwipeItem);
+import MintUi from 'mint-ui'
+Vue.use(MintUi)
+import 'mint-ui/lib/style.css'
+
 //导入mui的样式
 import './lib/mui/css/mui.css'
 //引入mui的扩展样式和字体样式，用于扩展图标的使用
@@ -30,8 +34,13 @@ Vue.use(VueResource)
 
 //导入格式化时间的插件
 import moment from 'moment'
+// Vue.http.root='http://127.0.0.1:8899/'
+Vue.http.emulateJSON=true
 
-
+// //懒加载页面
+// import { Lazyload  } from 'mint-ui';
+//
+// Vue.use(Lazyload);
 
 
 
@@ -47,5 +56,5 @@ Vue.filter('dataFormat',function (data,pattern="YYYY/MM/DD :HH:mm:ss"){
 render(createElement) {
     return createElement(app)
 },
-   router
+   router,
 })

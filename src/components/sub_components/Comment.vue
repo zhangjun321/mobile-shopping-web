@@ -5,12 +5,14 @@
     <hr>
 
 
-    <div class="form-floating">
-      <textarea class="form-control text-dark" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+    <div class="form-floating" >
+      <textarea class="form-control text-dark" placeholder="Leave a comment here" id="floatingTextarea"
+      v-model="msg"
+      ></textarea>
       <label for="floatingTextarea">Comments</label>
     </div>
 
-    <mt-button type="primary" size="large">发表评论</mt-button>
+    <mt-button type="primary" size="large" @click="postComment">发表评论</mt-button>
     <div class="cmt-list">
       <div class="cmt-item" v-for="(item,index) in commentList">
         <div class="cmt-title text-secondary">
@@ -27,17 +29,20 @@
 </template>
 
 <script>
+import {Toast} from 'mint-ui'
 export default {
   name: 'Comment.vue',
   data() {
     return {
       pageIndex: 1,
-      commentList: []
+      commentList: [],
+      msg:'',
+
     };
   },
   methods: {
     getComment() {
-      this.$http.get('http://127.0.0.1:8899/api/getcomments/' + this.id + '?pageindex=' + this.pageIndex)
+      this.$http.get('http://127.0.0.1:8899/api/getcomments/' +this.id + '?pageindex=' + this.pageIndex)
         .then(result => {
           if (result.body.status === 0) {
            this.commentList= this.commentList.concat(result.body.message);
@@ -51,6 +56,25 @@ export default {
     getMoreComments(){
       this.pageIndex++
       this.getComment();
+    },
+    postComment(){
+      if(this.msg.trim().length===0){
+       return  Toast("发表内容不能为空")
+      }else {
+        this.$http.post('http://127.0.0.1:8899/api/postcomment/'+this.id,{content:this.msg.trim()},{emulateJSON:true})
+          .then(function (result){
+             if(result.body.status===0){
+               var cms={user_name:'Jack Pudge',add_time:Date.now(),content:this.msg.trim()}
+               this.commentList.unshift(cms)
+               this.msg=''
+             }else{
+                Toast("提交评论失败")
+             }
+          })
+
+      }
+
+
     }
   },
   created() {

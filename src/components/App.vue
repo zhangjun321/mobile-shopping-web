@@ -8,19 +8,19 @@
 </transition>
 <!-- tabbar区域-->
     <nav class="mui-bar mui-bar-tab">
-      <router-link to="/homePage" class="mui-tab-item mui-active" >
+      <router-link to="/homePage" class="mui-tab-item-zj mui-active" >
         <span class="mui-icon mui-icon-home"></span>
         <span class="mui-tab-label">首页</span>
       </router-link>
-      <router-link to="/member" class="mui-tab-item" href="#tabbar-with-chat">
+      <router-link to="/member" class="mui-tab-item-zj" href="#tabbar-with-chat">
         <span class="mui-icon mui-icon-contact"></span>
         <span class="mui-tab-label">会员</span>
       </router-link>
-      <router-link to="/shopCart" class="mui-tab-item" href="#tabbar-with-contact">
+      <router-link to="/shopCart" class="mui-tab-item-zj" href="#tabbar-with-contact">
         <span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">0</span></span>
         <span class="mui-tab-label">购物车</span>
       </router-link>
-      <router-link to="/search" class="mui-tab-item" href="#tabbar-with-map">
+      <router-link to="/search" class="mui-tab-item-zj" href="#tabbar-with-map">
         <span class="mui-icon mui-icon-search"></span>
         <span class="mui-tab-label">搜索</span>
       </router-link>
@@ -45,7 +45,7 @@ name: "App.vue"
     font-size: 40px;
   }
   .mint-header{
-
+    z-index: 99;
 
 
   }
@@ -63,5 +63,32 @@ name: "App.vue"
 .v-enter-active,
 .v-leave-active{
   transition: all 0.5s ease;
+}
+.mui-bar-tab .mui-tab-item-zj.mui-active {
+  color: #007aff;
+}
+.mui-bar-tab .mui-tab-item-zj {
+  display: table-cell;
+  overflow: hidden;
+  width: 1%;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #929292;
+}
+.mui-bar-tab .mui-tab-item-zj .mui-icon {
+  top: 3px;
+  width: 24px;
+  height: 24px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.mui-bar-tab .mui-tab-item-zj .mui-icon ~ .mui-tab-label {
+  font-size: 11px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>

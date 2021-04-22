@@ -161,4 +161,31 @@ modify date: 2021/04/08
       + 绘制页面√
       + 请求API接口数据并渲染到页面√
       + 实现发表评论按钮功能√
+          1 给发表评论按钮添加单击事件√
+          2 双向绑定textarea数据 v-model√
+          3 在单击事件方法中判断一下评论内容是否为空√
+            如果为空则弹出警告√
+            如果不为空则将将评论内容封装成对象，使用unshift方法添加在评论数组对象的头部并显示到页面√
       + 实现加载更多按钮功能√
+          1 给加载更多按钮添加单击事件√
+          2 更新getComment中的this.commentList=this.commentList.concact(result.body.message)√
+            将下一页的数据拼接到this.commentList数组√
+          3 单击事件方法： 1 pageIndex++ 2 调用getComment方法√
+
+# 图片分享功能实现
+      + 添加路由功能√
+
+      + 制作顶部的滑动条√
+          tab-top-webview-main.html√
+          去掉全屏显示的 mui-fullscreen类√
+          滑动条不能正常使用的处理方法：
+            导入MUI的js文件，按照官网的方法初始化scroll控件√
+              初始化的方法要放到mounted(){}钩子函数中，否则刚进入页面不能滑动滚动条，需要刷新页面√
+            安装并在package.json中注册插件 babel-plugin-transform-remove-strict-mode 用于取消严格模式√
+          解决Tabbar无法正常切换组件的问题√
+            经过分析是mui.js中的类名和tabbar中的类名冲突造成的，重命名mui-tab-item类名，并在App.vue添加样式√
+      + 将API接口getimagecategory中的标题数据渲染到图像分类链接上√
+
+# 制作图片列表区域
+      + 图片列表需要使用懒加载技术 可以使用mint-ui的组件lazyload√
+      + 调整图片列表布局样式√
