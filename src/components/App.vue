@@ -1,7 +1,11 @@
 <template>
   <div class="container-fluid">
  <!--header区域-->
-  <mt-header class="text-secondary title " fixed  title="乐淘淘购物网站"></mt-header>
+    <header id="header" class="mui-bar mui-bar-nav">
+      <a style="text-decoration: none" title="back" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" @click.prevent="this.$router.go(-1)"></a>
+      <h1 class="mui-title text-primary" >
+        <span class="header-title">乐淘淘购物网</span></h1>
+    </header>
 <!--content区域  -->
 <transition>
   <router-view></router-view>
@@ -41,14 +45,19 @@ name: "App.vue"
   padding-top: 40px;
   padding-bottom: 50px;
 
-  .title{
-    font-size: 40px;
-  }
-  .mint-header{
-    z-index: 99;
+
+ .header-title{
+   font-size: 40px;
+ }
+.navbar{
+  z-index: 99;
+  height: 40px;
+  display: flex;
+  justify-content: center;
 
 
-  }
+}
+
 }
 
 .v-enter{

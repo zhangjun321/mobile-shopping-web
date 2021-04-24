@@ -1,11 +1,7 @@
 <template>
   <div class="app-container">
     <!--    轮播图区域-->
-    <mt-swipe :auto="6000">
-      <mt-swipe-item v-for="item in swipeList" :key="item.url">
-        <img :src="item.img" alt="swipe">
-      </mt-swipe-item>
-    </mt-swipe>
+<carousel :swipeList="swipeList"></carousel>
     <!--    六宫格图标区域-->
 
 
@@ -20,10 +16,11 @@
         <img src="../../images/share-image-02.png" alt="news.png">
         <div class="mui-media-body">图片分享</div>
       </router-link></li>
-      <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#">
+      <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+        <router-link to="/homePage/goodsList">
         <img src="../../images/shop_image_03.png" alt="news.png">
         <div class="mui-media-body">商品购买</div>
-      </a></li>
+      </router-link></li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
         <img src="../../images/images.png" alt="news.png">
         <div class="mui-media-body">留言反馈</div>
@@ -43,6 +40,7 @@
 
 <script>
 import { Toast } from 'mint-ui';
+import carousel from '../sub_components/Carousel.vue'
 
 export default {
   name: 'HomeContainer',
@@ -71,6 +69,9 @@ export default {
   },
   created() {
     this.getSwipe();
+  },
+  components:{
+    carousel
   }
 };
 </script>
@@ -80,30 +81,7 @@ export default {
   padding-bottom: 15px;
   text-align: center;
 
-  .mint-swipe {
-    text-align: center;
-    height: 300px;
 
-    .mint-swipe-item {
-
-      &:nth-child(1) {
-
-      }
-
-      &:nth-child(2) {
-
-      }
-
-      &:nth-child(3) {
-
-      }
-
-      img {
-        width: auto;
-        height: 100%;
-      }
-    }
-  }
   .mui-grid-view.mui-grid-9{
     background-color: white;
     border: none;

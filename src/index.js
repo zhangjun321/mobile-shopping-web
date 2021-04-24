@@ -42,6 +42,10 @@ Vue.http.emulateJSON=true
 //
 // Vue.use(Lazyload);
 
+import VuePreview from 'vue-preview'
+
+// default install
+Vue.use(VuePreview)
 
 
 //定义全局的过滤器
