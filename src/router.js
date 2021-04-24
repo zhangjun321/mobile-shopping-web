@@ -10,6 +10,9 @@ import PhotoList from './components/photo/photoList.vue'
 import PhotoInfo from './components/photo/photoInfo.vue'
 import GoodsList from './components/goods/GoodsList.vue';
 import GoodsInfo from './components/goods/GoodsInfo.vue';
+import GoodsDesc from './components/goods/GoodsDesc.vue'
+import GoodsComment from './components/goods/GoodsComment.vue'
+
 Vue.use(VueRouter)
 
 
@@ -27,7 +30,9 @@ const router = new VueRouter({
     {path:'/homePage/photoList',component:PhotoList},
     {path:'/homePage/photoInfo/:id',component:PhotoInfo},
     {path:'/homePage/goodsList/',component:GoodsList},
-    {path:'/homePage/goodsInfo/:id',component:GoodsInfo}
+    {path:'/homePage/goodsInfo/:id',component:GoodsInfo},
+    {path:'/homePage/goodsDesc/:id',component:GoodsDesc,name:'goodsDesc'},
+    {path:'/homePage/goodsComment/:id',component:GoodsComment,name:'goodsComment'}
   ],
   linkActiveClass:'mui-active', //使用mui-active 替换默认的类 router-link-active
 });

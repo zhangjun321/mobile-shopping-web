@@ -23,6 +23,8 @@ import 'mint-ui/lib/style.css'
 import './lib/mui/css/mui.css'
 //引入mui的扩展样式和字体样式，用于扩展图标的使用
 import './lib/mui/css/icons-extra.css'
+
+
 import 'bootstrap/dist/css/bootstrap.css'
 //导入路由模块，挂载到vm实例上
 import router from './router';
@@ -36,6 +38,8 @@ Vue.use(VueResource)
 import moment from 'moment'
 // Vue.http.root='http://127.0.0.1:8899/'
 Vue.http.emulateJSON=true
+
+
 
 // //懒加载页面
 // import { Lazyload  } from 'mint-ui';

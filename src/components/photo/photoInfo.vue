@@ -22,6 +22,7 @@
 
 <script>
 import Comment from '../sub_components/Comment.vue'
+
 export default {
   name: 'photoInfo.vue',
   data() {

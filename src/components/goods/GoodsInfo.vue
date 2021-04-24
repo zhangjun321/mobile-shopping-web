@@ -11,14 +11,19 @@
         <div class="mui-card-content-inner">
          <div class="info">
            <div class="price">
-             <p>销售价：￥{{goodsParams.sell_price}}</p>
+             <p class="text-danger">销售价：￥{{goodsParams.sell_price}}</p>
            </div>
            <div class="counter">
-             <p>购买数量：</p>
+             <span>购买数量：<numbox></numbox>
+
+             </span>
            </div>
+         </div >
+         <div class="button">
+           <mt-button type="primary" size="small">立即购买</mt-button>
+           <mt-button type="danger" size="small">加入购物车</mt-button>
          </div>
-          <mt-button type="primary" size="small">立即购买</mt-button>
-          <mt-button type="danger" size="small">加入购物车</mt-button>
+
         </div>
       </div>
 
@@ -36,6 +41,11 @@
           <p class="add-time">上架时间： {{goodsParams.add_time | dataFormat}}</p>
         </div>
         </div>
+        <div class="mui-card-footer">
+          <mt-button type="primary" size="large" plain @click="goDesc(id)">图文介绍</mt-button>
+          <br>
+          <mt-button type="danger" size="large" plain @click="goComment(id)">发表评论</mt-button>
+        </div>
       </div>
 
     </div>
@@ -46,6 +56,7 @@
 
 <script>
 import carousel from '../sub_components/Carousel.vue'
+import GoodsInfo_NumBox from '../sub_components/GoodsInfo_NumBox.vue'
 export default {
   name: 'GoodsInfo.vue',
   data() {
@@ -78,14 +89,22 @@ export default {
           Toast("获取商品参数数据失败")
         }
       })
-    }
+    },
+    goDesc(id){
+      this.$router.push({name:'goodsDesc',params:{id}})
+    },
+    goComment(id){
+      this.$router.push({name:'goodsComment',params:{id}})
+
+    },
   },
   created() {
     this.getCarousel();
     this.getGoodsParams()
   },
   components:{
-    carousel
+    carousel,
+    'numbox':GoodsInfo_NumBox,
   }
 };
 </script>
@@ -94,7 +113,12 @@ export default {
 .info-container {
   overflow: hidden;
 
-
+.button{
+  padding: 10px;
+}
+.mui-card-footer{
+  display: block;
+}
 
 }
 </style>
