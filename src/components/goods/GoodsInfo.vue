@@ -17,7 +17,7 @@
             <div class="counter">
              <span>购买数量：
 
-               <numbox>
+               <numbox @getCount="getSelectedCount" :max="goodsParams.stock_quantity">
 
              </numbox>
 
@@ -81,6 +81,7 @@ export default {
       carousel: [],
       goodsParams: {},
       flag: false,
+      count:1,
     };
   },
   methods: {
@@ -149,6 +150,10 @@ export default {
       this.flag = !this.flag;
 
     },
+    getSelectedCount(count){
+      //当子组件调用该方法的时候把count值传给父组件
+      this.count=count;
+    }
   },
   created() {
     this.getCarousel();

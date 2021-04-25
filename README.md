@@ -226,5 +226,21 @@ modify date: 2021/04/08
         var   badgePosition=document.getElementById('badge').getBoundingClientRect()
         badgePosition.left
 
+# 实现点击加入购物车后拿到numBox的值
+      + 涉及到父子组件的嵌套，子组件给父组件传值， 使用事件调用机制：父组件向子组件传递方法，子组件调用该方法，并将值以参数的形式传递给这方法√
+      + 如何获取input输入框的值：√
+          监听框change事件 @change="onChanged"√
+          使用 this.$refs.numbox.value 拿到numbox的值√
+          当onChanged(){
+              //当numbox的值发生改变的时候将value的值传给getCount方法
+              this.$emit('getCount','parseInt(this.$refs.numbox.value)')
+              }
+
+# 是指numbox的最大值为库存量
+      + 涉及到父组件向子组件传值，用属性绑定将 :max="goodsParams.stock_quantity" 传递给子组件√
+      + 在子组件中的vm实例上注册 props:['max']√
+      + 通过属性绑定将最大值传递给numbox>:data-numbox-max='max'√
+      + max的值要使用watch监听，因为max的值是使用异步操作获取的，我们不知道什么时候能拿到max值
+
 
 
