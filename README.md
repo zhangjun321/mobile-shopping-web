@@ -191,20 +191,40 @@ modify date: 2021/04/08
           使用vue-preview 插件实现缩略图的显示
       + 新增一个photoInfo.vue组件，配置路由关系
       + 调整图片列表布局样式√
-      + 获取API接口数据并渲染到页面上
-      + 实现加载更多按钮的功能
+      + 获取API接口数据并渲染到页面上√
+      + 实现加载更多按钮的功能√
 # 商品列表功能
-      + 绘制商品列表页面，修改样式
-          使用了bootstrap的card组件
-      + 从API获取数据并渲染页面
+      + 绘制商品列表页面，修改样式√
+          使用了bootstrap的card组件√
+      + 从API获取数据并渲染页面√
 
 # 商品详情功能
-      + 路由链接改造，新建goodsInfo.vue组件
-      + 使用编程式导航修改路由链接
+      + 路由链接改造，新建goodsInfo.vue组件√
+      + 使用编程式导航修改路由链接√
 
 # 抽取轮播图为公共组件
-      + 新建Carousel.vue组件，将录播图的html代码和样式拷到里面
-      + 在需要使用轮播图的页面
-        1 导入轮播图组件
-        2 在vm 的components里注册
-        3 使用标签的形式在页面上使用，将轮播图的数据以参数的形式传给子组件   :swipeList="carousel"
+      + 新建Carousel.vue组件，将录播图的html代码和样式拷到里面√
+      + 在需要使用轮播图的页面√
+        1 导入轮播图组件√
+        2 在vm 的components里注册√
+        3 使用标签的形式在页面上使用，将轮播图的数据以参数的形式传给子组件   :swipeList="carousel"√
+
+# 商品详情页面和商品评论页面
+      + 点击商品详情和商品评论的按钮进入商品详情页面和商品品论页面√
+      + 创建GoodsInfo.vue 和 GoodsComment.vue组件√
+      + 使用编程时导航完成路由匹配√
+      + 获取API接口数据渲染页面√
+      + 导入评论子组件到评论页面√
+
+#实现点击加入购物车按钮小球进入购物车的半场动画
+      + 制作小球样式，并使用transition标签包裹√
+      + 完成半场动画三个阶段的钩子函数定义√
+        @before-enter
+        @enter
+        @after-enter
+      + 使用操作购物车徽标的dom元素，获取徽标相对小球初始位置的坐标√
+        var   badgePosition=document.getElementById('badge').getBoundingClientRect()
+        badgePosition.left
+
+
+
