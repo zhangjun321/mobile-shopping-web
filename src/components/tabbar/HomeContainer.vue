@@ -21,10 +21,11 @@
         <img src="../../images/shop_image_03.png" alt="news.png">
         <div class="mui-media-body">商品购买</div>
       </router-link></li>
-      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+        <router-link to="/homepage/vuex">
         <img src="../../images/images.png" alt="news.png">
         <div class="mui-media-body">留言反馈</div>
-      </a></li>
+      </router-link></li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
         <img src="../../images/goods.jpg" alt="news.png">
         <div class="mui-media-body">商品专区</div>

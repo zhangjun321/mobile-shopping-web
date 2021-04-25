@@ -24,37 +24,27 @@ npm run unit
 npm test
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-modify date: 2021/04/08
-
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/)
+and [docs for vue-loader](http://vuejs.github.io/vue-loader). modify date: 2021/04/08
 
 # 制作首页中的组件
-  1 完成首页中的header区域，使用的是Mint-UI中的 Header组件
-  2 制作底部的tabbar使用的是MUI的tabbar
-  3 中间区域放置一个router-view展示匹配的路由组件
-  4 使用购物车的图标需要导入MUI的扩展样式
-     + import './lib/mui/css/icons-extra.css'
-     + 导入font的样式
+
+1 完成首页中的header区域，使用的是Mint-UI中的 Header组件 2 制作底部的tabbar使用的是MUI的tabbar 3 中间区域放置一个router-view展示匹配的路由组件 4
+使用购物车的图标需要导入MUI的扩展样式 + import './lib/mui/css/icons-extra.css' + 导入font的样式
 
 # 完成路由的改造和路由高亮
-   1.1 安装vue-router
-   1.2 在项目中导入路由 Import VueRouter from 'vue-router'
-   1.3 使用路由模块 Vue.use(VueRouter)
-   1.4 改造链接为<router-link to="/home">
-   1.5 创建组件对象 HomeContainer.vue
-   1.6 导入HomeContainer.vue 组件
-   1.7 配置路由模块 var router = new VueRouter({
-        routes:[{
-          path:'/home,component:HomeContainer}]
-        })
-   1.8 将路由模块挂载到 vm实例上
-        new Vue({
-            el:"#app",
-            router})
-   1.9  用 router-view 标签站位路由匹配区域;
-2 路由高亮
-   2.1  在router.js路由模块配置属性linkActiveClass:'mui-active', //使用mui-active 替换默认的类 router-link-active
+
+1.1 安装vue-router 1.2 在项目中导入路由 Import VueRouter from 'vue-router' 1.3 使用路由模块 Vue.use(VueRouter)
+1.4 改造链接为<router-link to="/home">
+1.5 创建组件对象 HomeContainer.vue 1.6 导入HomeContainer.vue 组件 1.7 配置路由模块 var router = new VueRouter({
+routes:[{ path:'/home,component:HomeContainer}]
+})
+1.8 将路由模块挂载到 vm实例上 new Vue({ el:"#app", router})
+1.9 用 router-view 标签站位路由匹配区域; 2 路由高亮 2.1 在router.js路由模块配置属性linkActiveClass:'mui-active', //使用mui-active 替换默认的类
+router-link-active
+
 # 首页轮播图的制作：使用mint-ui 的swipe组件
+
     1 代码
     https://mint-ui.github.io/docs/#/zh-cn2/swipe
        + 引入swipe组件
@@ -88,9 +78,12 @@ modify date: 2021/04/08
         +渲染轮播图页面
         +设置img的高度,宽度，和样式
 
-#六宫格样式改造
+# 六宫格样式改造
+
     + 从MUI获取九宫格的代码片段grid-default-html 改造成自己的样式并加入图标
+
 # 完成tabbar中不同路由之间的切换效果
+
     + 将App.js中的router-view 用 transition标签包裹
     + 配置动画的效果
       .v-enter{
@@ -108,9 +101,8 @@ modify date: 2021/04/08
       }
 
 # promise的使用
-  需求：封装一个方法，将给定文件路径的文件内容读取并返回
-  promise用于解决回调地狱的问题，将回调嵌套的层级结构转变成链式结构
 
+需求：封装一个方法，将给定文件路径的文件内容读取并返回 promise用于解决回调地狱的问题，将回调嵌套的层级结构转变成链式结构
 
       +如果后续Promise执行依赖于前面Promise执行的结果。一旦有报错则立即终止所有的promise执行
       + catch()的作用是捕获异常并立即终止程序继续执行
@@ -137,26 +129,28 @@ modify date: 2021/04/08
         console.log(err.message)
         })
 
-#Jquery的ajax异步请求也可以使用promise
-  $(function (){
-          $('#btn').on('click',function (){
-            $.ajax({
-              url:'./data.json',
-              type:'get',
-              dataType:'json', }).then(function (data){
-              console.log(data)
-            })
-          })
-      })
+# Jquery的ajax异步请求也可以使用promise
+
+$(function (){ $('#btn').on('click',function (){ $.ajax({ url:'./data.json', type:'get', dataType:'json', }).then(
+function (data){ console.log(data)
+})
+})
+})
+
 # 完成点击首页中的新闻资讯链接进入NewsList页面
+
       + 改造路由链接√
       + 修改页面样式√
       + 请求API接口数据并渲染到页面√
+
 # 完成点击新闻资讯列表中的链接进入新闻详情的功能
+
       + 创建NewsInfo组件，改造路由√
       + 绘制页面√
       + 请求API接口数据并渲染到页面√
+
 # 单独创建一个评论子组件，可以复用到需要添加评论功能页面的区域
+
       + 创建Comment.vue组件√
       + 绘制页面√
       + 请求API接口数据并渲染到页面√
@@ -173,6 +167,7 @@ modify date: 2021/04/08
           3 单击事件方法： 1 pageIndex++ 2 调用getComment方法√
 
 # 图片分享功能实现
+
       + 添加路由功能√
 
       + 制作顶部的滑动条√
@@ -187,22 +182,27 @@ modify date: 2021/04/08
       + 将API接口getimagecategory中的标题数据渲染到图像分类链接上√
 
 # 制作图片列表区域
+
       + 图片列表需要使用懒加载技术 可以使用mint-ui的组件lazyload√
           使用vue-preview 插件实现缩略图的显示
       + 新增一个photoInfo.vue组件，配置路由关系
       + 调整图片列表布局样式√
       + 获取API接口数据并渲染到页面上√
       + 实现加载更多按钮的功能√
+
 # 商品列表功能
+
       + 绘制商品列表页面，修改样式√
           使用了bootstrap的card组件√
       + 从API获取数据并渲染页面√
 
 # 商品详情功能
+
       + 路由链接改造，新建goodsInfo.vue组件√
       + 使用编程式导航修改路由链接√
 
 # 抽取轮播图为公共组件
+
       + 新建Carousel.vue组件，将录播图的html代码和样式拷到里面√
       + 在需要使用轮播图的页面√
         1 导入轮播图组件√
@@ -210,6 +210,7 @@ modify date: 2021/04/08
         3 使用标签的形式在页面上使用，将轮播图的数据以参数的形式传给子组件   :swipeList="carousel"√
 
 # 商品详情页面和商品评论页面
+
       + 点击商品详情和商品评论的按钮进入商品详情页面和商品品论页面√
       + 创建GoodsInfo.vue 和 GoodsComment.vue组件√
       + 使用编程时导航完成路由匹配√
@@ -217,6 +218,7 @@ modify date: 2021/04/08
       + 导入评论子组件到评论页面√
 
 # 实现点击加入购物车按钮小球进入购物车的半场动画
+
       + 制作小球样式，并使用transition标签包裹√
       + 完成半场动画三个阶段的钩子函数定义√
         @before-enter
@@ -227,6 +229,7 @@ modify date: 2021/04/08
         badgePosition.left
 
 # 实现点击加入购物车后拿到numBox的值
+
       + 涉及到父子组件的嵌套，子组件给父组件传值， 使用事件调用机制：父组件向子组件传递方法，子组件调用该方法，并将值以参数的形式传递给这方法√
       + 如何获取input输入框的值：√
           监听框change事件 @change="onChanged"√
@@ -237,6 +240,7 @@ modify date: 2021/04/08
               }
 
 # 设置numbox的最大值为库存量
+
       + 涉及到父组件向子组件传值，用属性绑定将 :max="goodsParams.stock_quantity" 传递给子组件√
       + 在子组件中的vm实例上注册 props:['max']√
       + 通过属性绑定将最大值传递给numbox>:data-numbox-max='max'√
@@ -248,5 +252,32 @@ modify date: 2021/04/08
               }
           }
 
+# Vuex是一个全局的共享数据存储区域
 
-
+      + 如何使用vuex
+        1 安装vuex: npm install vuex -S
+        2 在index.js中导入vuex: import Vuex from 'vuex'
+        3 注册vuex Vue.use(Vuex)
+        4 创建Vuex.Store()实例
+            const store=new Vuex.Store({
+              state:{
+                      //用于存放公共数据
+                    count:0
+                      //在外部组件可以通过 $store.state.count来使用count
+                      } ,
+              mutations:{
+                    //用于定义操作数据的方法
+                  increase(state){state.count++}
+                    //如果想在外部组件调用该方法只能通过this.$store.commit('方法名称')的形式来调用
+                  decreament(state,c){
+                            state.count-=c[0]+c[1]
+                              // mutation 中的方法只能接收两个参数，参数1 state 参数2 可以是一个对象，数组，或者常数
+                              }
+                            },
+              getters:{
+                        optCounter(state){return '当前计数器的值为:'+state.count}
+                        //经过对比getters和过滤器比较相似，都是把原数据进行了包装提供给调用者，
+                          只要state的数据发生了变化就会立即触发getters重新求值
+                        }
+            })
+        5 将 store 挂载到vm实例上

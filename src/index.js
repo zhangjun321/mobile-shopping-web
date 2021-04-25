@@ -52,6 +52,38 @@ import VuePreview from 'vue-preview'
 Vue.use(VuePreview)
 
 
+// vuex install
+// npm install vuex -S
+// import vuex
+import Vuex from 'vuex'
+// register
+Vue.use(Vuex)
+// new Vuex.store() instance,得到数据仓储对象
+
+const store = new Vuex.Store({
+  state:{
+    //  用来存储公共数据
+    count:0
+  },
+  mutations:{
+  //  如果要操作state中的数据 只能调用mutations中定义的方法来操作数据不能直接在组件中操作数据，容易引起数据混乱
+    increase(state){
+      state.count++
+    },
+  //  如果想要调用 mutations中的方法只能使用 this.$store.commit('increase')
+    decrease(state,c){
+      // mutation 中的方法只能接收两个参数，参数1 state 参数2 可以是一个对象，数组，或者常数
+      state.count-=c[0]+c[1]
+    },
+  },
+  getters:{
+    optCounter(state){
+      return '当前的计数器值为:'+state.count
+    }
+  }
+})
+
+
 //定义全局的过滤器
 Vue.filter('dataFormat',function (data,pattern="YYYY/MM/DD :HH:mm:ss"){
      return  moment(data).format(pattern)
@@ -65,4 +97,5 @@ render(createElement) {
     return createElement(app)
 },
    router,
+   store,
 })

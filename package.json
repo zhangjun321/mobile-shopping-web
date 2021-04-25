@@ -18,7 +18,8 @@
     "vue": "^2.6.12",
     "vue-preview": "^1.1.3",
     "vue-resource": "^1.5.2",
-    "vue-router": "^3.5.1"
+    "vue-router": "^3.5.1",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

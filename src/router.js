@@ -12,6 +12,7 @@ import GoodsList from './components/goods/GoodsList.vue';
 import GoodsInfo from './components/goods/GoodsInfo.vue';
 import GoodsDesc from './components/goods/GoodsDesc.vue'
 import GoodsComment from './components/goods/GoodsComment.vue'
+import Vuex from './components/vuex/Vuex.vue'
 
 Vue.use(VueRouter)
 
@@ -32,7 +33,8 @@ const router = new VueRouter({
     {path:'/homePage/goodsList/',component:GoodsList},
     {path:'/homePage/goodsInfo/:id',component:GoodsInfo},
     {path:'/homePage/goodsDesc/:id',component:GoodsDesc,name:'goodsDesc'},
-    {path:'/homePage/goodsComment/:id',component:GoodsComment,name:'goodsComment'}
+    {path:'/homePage/goodsComment/:id',component:GoodsComment,name:'goodsComment'},
+    {path:'/homePage/vuex',component:Vuex}
   ],
   linkActiveClass:'mui-active', //使用mui-active 替换默认的类 router-link-active
 });
