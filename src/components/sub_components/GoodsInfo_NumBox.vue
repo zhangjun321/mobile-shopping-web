@@ -26,7 +26,7 @@ export default {
   props:['max'],
   watch:{
     //属性监听
-    'max':function (newValue,oldValue){
+    'max':function (newValue){
       mui('.mui-numbox').numbox().setOption('max',newValue)
     }
   }
