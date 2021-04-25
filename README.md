@@ -236,11 +236,17 @@ modify date: 2021/04/08
               this.$emit('getCount','parseInt(this.$refs.numbox.value)')
               }
 
-# 是指numbox的最大值为库存量
+# 设置numbox的最大值为库存量
       + 涉及到父组件向子组件传值，用属性绑定将 :max="goodsParams.stock_quantity" 传递给子组件√
       + 在子组件中的vm实例上注册 props:['max']√
       + 通过属性绑定将最大值传递给numbox>:data-numbox-max='max'√
       + max的值要使用watch监听，因为max的值是使用异步操作获取的，我们不知道什么时候能拿到max值
+          watch:{
+              //属性监听
+              'max':function (newValue){
+                mui('.mui-numbox').numbox().setOption('max',newValue)
+              }
+          }
 
 
 
